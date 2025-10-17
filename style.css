@@ -15,7 +15,7 @@
   background-position: 85px -15px;
   position: absolute;
   width: 1280px;
-  background-image: url(/img/background.svg);
+  background-image: url("/img/background.svg");
   background-size: 790px 697px;
   
 }
