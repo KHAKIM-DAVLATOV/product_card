@@ -15,21 +15,17 @@
   background-position: 85px -15px;
   position: absolute;
   width: 1280px;
-  background-image: url("/img/background.svg");
+  background-image: url("/img/background-dandelions.png");
   background-size: 790px 697px;
-  
 }
 
-
-.choose-product-text {
-font-size: 70px;
-line-height: 78px;
-text-align: center;
-vertical-align: middle;
-margin-top: 220px;
+.main-title {
+  font-size: 70px;
+  line-height: 78px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 220px;
 }
-
-
 
 .container {
   width: 1110px;
@@ -51,22 +47,22 @@ margin-top: 220px;
 }
 
 .product-category {
-font-weight: 400;
-font-size: 12px;
-line-height: 24px;
-text-transform: uppercase;
-color:#A5A3B9;
-margin-top: 30px;
-margin-bottom: 5px;
-display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color:#A5A3B9;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  display: block;
 }
 
 .product-name {
-font-weight: 700;
-font-size: 20px;
-line-height: 27px;
-color: #515076;
-margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  color: #515076;
+  margin-bottom: 5px;
 }
 
 .product-description {
@@ -74,14 +70,15 @@ margin-bottom: 5px;
 }
 
 .product-compound {
-margin-top: 5px;
-list-style: circle;
+  margin-top: 5px;
+  list-style: circle;
 }
 
 .product-compound-item {
   margin-left: 0px;
   list-style: none;
 }
+
 .product-compound-item::before {
   content: '';
   display: inline-block;
@@ -101,12 +98,12 @@ list-style: circle;
 }
 
 .product-price-label {
-font-weight: 700;
-font-size: 20px;
-line-height: 24px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .product-price {
-font-size: 20px;
-line-height: 24px;
+  font-size: 20px;
+  line-height: 24px;
 }
