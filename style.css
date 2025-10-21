@@ -27,6 +27,13 @@
   margin-top: 220px;
 }
 
+.button-managment {
+  position: fixed;
+  margin-left: 200px;
+  margin-top: 50px;
+  
+}
+
 .container {
   width: 1110px;
   height: 1191px;
