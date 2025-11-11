@@ -37,11 +37,28 @@ function openGoogle() {
 
 // Вывод консоль лог
 
-const outputLogButton = document.querySelector('#output-console-log');
+const outputAlertandLogBtn = document.querySelector('#output-console-log');
 
-outputLogButton.addEventListener('click', () => outputConsoleLog('ДЗ №4'));
+outputAlertandLogBtn.addEventListener('click', () => outputAlertandConsoleLog('ДЗ №4'));
 
-function outputConsoleLog (message) {
+function outputAlertandConsoleLog (message) {
   alert(message);
   console.log(message);
 };
+
+
+//вывод в консоль заголовка
+
+const OutputTitle = document.querySelector(".main-title");
+
+OutputTitle.addEventListener("mouseover", () => console.log(OutputTitle.textContent));
+
+
+// Переключение цветов кнопки
+
+const toggleColorButton = document.getElementById("btn-change-bg");
+
+toggleColorButton.addEventListener("click", function () {
+this.classList.toggle('bg-red');
+this.classList.toggle('bg-blue');
+});

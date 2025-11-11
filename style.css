@@ -29,9 +29,8 @@
 
 .button-managment {
   position: fixed;
-  margin-left: 200px;
+  margin-left: 100px;
   margin-top: 50px;
-  
 }
 
 .container {
@@ -113,4 +112,12 @@
 .product-price {
   font-size: 20px;
   line-height: 24px;
+}
+
+.bg-red {
+  color: red;
+}
+
+.bg-blue {
+  color: blue;
 }
