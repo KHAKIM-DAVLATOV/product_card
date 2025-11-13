@@ -59,5 +59,5 @@ outputTitle.addEventListener("mouseover", () => console.log(OutputTitle.textCont
 const toggleColorButton = document.getElementById("btn-change-bg");
 
 toggleColorButton.addEventListener("click", function() {
-  this.classList.toggle('bg-red');
+  this.classList.toggle('color-text-red');
 });
