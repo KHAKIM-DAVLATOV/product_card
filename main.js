@@ -37,11 +37,11 @@ function openGoogle() {
 
 // Вывод консоль лог
 
-const outputAlertandLogBtn = document.querySelector('#output-console-log');
+const outputAlertAndLogBtn = document.querySelector('#output-console-log');
 
-outputAlertandLogBtn.addEventListener('click', () => outputAlertandConsoleLog('ДЗ №4'));
+outputAlertAndLogBtn.addEventListener('click', () => outputAlertAndConsoleLog('ДЗ №4'));
 
-function outputAlertandConsoleLog (message) {
+function outputAlertAndConsoleLog (message) {
   alert(message);
   console.log(message);
 };
@@ -49,16 +49,15 @@ function outputAlertandConsoleLog (message) {
 
 //вывод в консоль заголовка
 
-const OutputTitle = document.querySelector(".main-title");
+const outputTitle = document.querySelector(".main-title");
 
-OutputTitle.addEventListener("mouseover", () => console.log(OutputTitle.textContent));
+outputTitle.addEventListener("mouseover", () => console.log(OutputTitle.textContent));
 
 
 // Переключение цветов кнопки
 
 const toggleColorButton = document.getElementById("btn-change-bg");
 
-toggleColorButton.addEventListener("click", function () {
-this.classList.toggle('bg-red');
-this.classList.toggle('bg-blue');
+toggleColorButton.addEventListener("click", function() {
+  this.classList.toggle('bg-red');
 });
