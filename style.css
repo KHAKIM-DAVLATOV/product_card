@@ -27,6 +27,12 @@
   margin-top: 220px;
 }
 
+.button-managment {
+  position: fixed;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
 .container {
   width: 1110px;
   height: 1191px;
@@ -107,3 +113,8 @@
   font-size: 20px;
   line-height: 24px;
 }
+
+.color-text-red {
+  color: red;
+}
+
