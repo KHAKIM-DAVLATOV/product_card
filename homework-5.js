@@ -1,21 +1,21 @@
 //3 задание -  функция, которая принимает 2 параметра: город и температуру
     
-const showiInformation = (city,temperature) => {
+const showInformation = (city,temperature) => {
   console.log(`Сейчас в ${city} температура  — ${temperature} градусов по Цельсию`)
 }
 
-showiInformation("Санкт-Петербурге","21")
+showInformation("Санкт-Петербурге","21")
 
 // 4 задание
 
 const SPEED_SOUND = 1193.26;
 
-const checkSpeed = (writeSpeed) => {
-  if (writeSpeed > SPEED_SOUND ) {
+const checkSpeed = (speed) => {
+  if (speed > SPEED_SOUND) {
     console.log("Сверхзвуковая скорость")
-  } else if (writeSpeed === SPEED_SOUND) {
+  } else if (speed === SPEED_SOUND) {
     console.log("Скорость звука")
-  } else if (writeSpeed < SPEED_SOUND) {
+  } else if (speed < SPEED_SOUND) {
     console.log("Дозвуковая скорость")
   }
 }
@@ -23,14 +23,14 @@ const checkSpeed = (writeSpeed) => {
 checkSpeed(1193)
 
 // 5 задание 
-const productname = 'Кофе';
+const productName = 'Кофе';
 const productPrice = 150;
 
-const checkPurchase = (allMany) => {
-  if (allMany >= productPrice) {
-    console.log(`${productname} приобретен`)
+const buyProduct = (budget) => {
+  if (budget >= productPrice) {
+    console.log(`${productName} приобретен`)
   } else {
-    console.log(`Вам не хватает ${productPrice - allMany}$, пополните баланс`)
+    console.log(`Вам не хватает ${productPrice - budget}$, пополните баланс`)
   }
 }
 
@@ -38,7 +38,7 @@ checkPurchase(100);
 
 // 6 задание
 
-function checkMany (many) {
+function checkMany(many) {
   return console.log(`В кошельке ${many}$`)
 }
 
