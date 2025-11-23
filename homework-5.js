@@ -1,10 +1,10 @@
 //3 задание -  функция, которая принимает 2 параметра: город и температуру
     
-const showSityAndTemperature = (city,temperature) => {
+const showWeatherInfo = (city,temperature) => {
   console.log(`Сейчас в ${city} температура  — ${temperature} градусов по Цельсию`)
 }
 
-showSityAndTemperature("Санкт-Петербурге","21")
+showWeatherInfo("Санкт-Петербурге","21")
 
 // 4 задание
 
