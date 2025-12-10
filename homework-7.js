@@ -44,9 +44,7 @@ console.log(commentSocialNetwork.filter(comment => comment.email.includes('.com'
 
 //8. Перебрать массив таким образом, что бы пользователи с id меньше или равно 5 имели postId: 2, а те, у кого id больше 5, имели postId: 1
 
-const newArray = commentSocialNetwork.map(comment => {
-  return {...comment, postId: comment.id <= 5 ? 2 : 1}
-})
+const newArray = commentSocialNetwork.map(comment => ({...comment, postId: comment.id <= 5 ? 2 : 1}))
 
 console.log(newArray)
 
@@ -62,9 +60,7 @@ console.log(copyArray)
 
 //10. Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false.
 
-const checkLengthComment = commentSocialNetwork.map(comment => {
-  return {...comment, isInvalid: comment.body.length > 180 ? true : false}
-})
+const checkLengthComment = commentSocialNetwork.map(comment => ({...comment, isInvalid: comment.body.length >= 180}))
 
 console.log(checkLengthComment)
 
