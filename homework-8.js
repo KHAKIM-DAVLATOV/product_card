@@ -28,7 +28,11 @@ function showProductCards (productCards) {
 
 //4. Используя метод .reduce(), получить массив объектов, где ключем является название продукта, а значением - его описание
 
-const productDescriptionsMap = productCards.reduce((acc, product) => [...acc, {[product.name]: product.description}], []);
+const productDescriptionsMap = productCards.reduce((acc, product) => {
+  acc[product.name] = product.description;
+  return acc
+}, {}) 
+
 
 console.log(productDescriptionsMap)
 
