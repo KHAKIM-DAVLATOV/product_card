@@ -61,6 +61,6 @@ export const productCards = [
       "минералы",
       "масла"
     ],
-    price: 7520
+    price: 7520 
   }
 ]
