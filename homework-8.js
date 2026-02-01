@@ -6,20 +6,16 @@ const productList = document.querySelector('#product-list');
 function showProductCards (productCards) {
   productCards.forEach(product => {
     const productClone = productTemplate.content.cloneNode(true);
+    
+    productClone.querySelector('.product-img').src = `/img/${product.img}.png`;
+    
     productClone.querySelector('.product-category').textContent = product.category;
     productClone.querySelector('.product-name').textContent = product.name;
     productClone.querySelector('.product-description').textContent = product.description;
     
-    const compoundList = productClone.querySelector(".product-compound");
-    product.compound.forEach((item) => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      li.classList.add("compound-item");
-      compoundList.appendChild(li);
-    });
+    productClone.querySelector('.product-compound').innerHTML = product.compound.map(item => `<li>${item}<li>`).join('');
     
-    const priceElem = productClone.querySelector(".product-price");
-    priceElem.textContent = `${product.price.toLocaleString()} ₽`;
+    productClone.querySelector('.product-price').textContent = product.price + '\u20BD'
     
     productList.appendChild(productClone);
   })
@@ -49,7 +45,7 @@ const getCardCount = () => {
   }
 }
 
-getCardCount();
+// getCardCount();
 
 
 
