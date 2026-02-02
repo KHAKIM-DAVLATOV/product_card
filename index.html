@@ -10,8 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;800&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="content-container">
+  <div class="content">
     <h1 class="main-title">Выбери свой продукт</h1>
+    <div class="background"></div>
     <div class="button-managment">
       <button id="change-color-first-card">изменение цвета первого продукта</button>
       <button id="change-color-all-cards">изменение цвета всех продуктов</button>
@@ -19,26 +20,102 @@
       <button id="output-console-log">Вывести сообщения в консоле лог</button>
       <button id="btn-change-bg" class="color-text-red">Переключение цветов</button>
     </div>
-    <ul class="container" id="product-list"></ul>
-      <template id="product-template">
-        <li class="card-container">
-          <img width="290" height="245">
-          <span class="product-category"></span>
-          <h2 class="product-name"></h2>
-          <p class="product-description"></p>
-          <span>Состав:</span>
-          <ul class="product-compound"></ul>
-          <div class="product-price-container">
-            <span class="product-price-label">Цена</span>
-            <span class="product-price"></span>
-          </div>
-        </li>
-      </template>
-      
+    <ul id="product-list"></ul>
+    <template id="product-template">
+      <li class="card-container">
+        <img class="product-img" width="290" height="245"> 
+        <span class="product-category"></span>
+        <h2 class="product-name"></h2>
+        <p class="product-description"></p>
+        <span>Состав:</span>
+        <ul class="product-compound"></ul>
+        <div class="product-price-container">
+          <span class="product-price-label">Цена</span>
+          <span class="product-price"></span>
+        </div>
+      </li>
+    </template>
   </div>
+  
+  <div class="registration-container">
+    <form class="registration-form">
+      
+      <label for="userName">Ваше имя:</label>
+      <input placeholder="Имя" required name="userName" id="userName"
+      
+      <label for="userSurname">Ваша фамилия:</label>
+      <input placeholder="Фамилия" required name="userSurname" id="userSurname">
+    
+      <label for="birthdate">Ваша дата рождения:</label>
+      <input placeholder="Дата рождения" required type="date" name="birthdate" id="birthdate">
+      
+      <label for="login">Ваш логин:</label>
+      <input placeholder="логин" required name="login" id="login">
+      
+      <label for="password">Ваше пароль:</label>
+      <input placeholder="Пароль" required  type="password" name="password" id="password" >
+      
+      <label for="repeatPassword">Повторите ваш пароль:</label>
+      <input placeholder="Повторите пароль" required type="password" name="repeatPassword" id="repeatPassword">
+      
+      <button type="submit">Регистрация</button>
+      <button type="reset">Сбросить</button>
+      <button class="auth-btn" id="authBtn" type="button">Аутентификация</button>
+    </form>
+     
+    <!-- Уровень 3: Кнопка аутентификации -->
+    
+    <div id="modal" class="modal">
+      <div class="overlay"></div>
+      <div class="modal-content">
+        <p>Вход в систему</p>
+        <button class="close-btn">&times;</button>
+        <form id="loginForm">
+          <label for="login" class="auth-label">Логин:</label>
+          <input id="auth-login" required name="login" class="auth-input" placeholder="Введите логин"><br>
+          
+          <label for="password" class="auth-label">Пароль:</label>
+          <input type="password" id="auth-password" required name="password" class="auth-input" placeholder="Введите пароль">
+          
+          <button type="submit" id="authLoginButton">Войти</button>
+        </form>
+        <div id="message" class="message"></div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-container">
+        
+      <div class="left-block">
+        <h3 class="color-white">Product Cards</h3>
+        <span class="color-white">У нас самые лучшие продукты для кожи!</span>
+        <a href="#"><img src="/img/tg-icon.svg" alt=""></a>
+        <a href="#"><img src="/img/vk-icon.svg" alt=""></a>
+      </div>
+        
+      <div class="center-block">
+        <span class="color-white">Подпишись на наши акции:</span>
+        <form class="footer-email" id="footer-email">
+          <input type="email" name="email" placeholder="Введи Email..." required>
+          <div class="vertical-line"></div>
+          <button type="submit">Подписаться</button>
+        </form>
+        <a href="#" class="footer-email-contact">www.product-cards.com©all right reserve</a>
+      </div>
+        
+      <div class="right-block">
+        <span class="color-white">Быстрые ссылки</span>
+        <a href="#" class="color-white">Главная</a>
+        <a href="#" class="color-white">Магазин</a>
+        <a href="#" class="color-white">Контакты</a>
+      </div>
+    </div>
+  </footer>
   <script src="/homework-5.js" type="module"></script>
   <script src="/homework-6.js" type="module"></script>
   <script src="/homework-7.js" type="module"></script>
   <script src="/homework-8.js" type="module"></script>
+  <script src="/homework-9.js"></script>
 </body>
 </html>
