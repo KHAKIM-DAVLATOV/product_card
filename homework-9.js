@@ -14,10 +14,15 @@ const footerEmail = document.querySelector('#footer-email');
 footerEmail.addEventListener('submit', (event) => {
   event.preventDefault();
   const form = event.target;
+  getForm(form);
+  console.log(getForm(form));
+});
+
+function getForm(form) {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
-  console.log(data);
-});
+  return data;
+}
 
 // Уровень 2:
 // 5. Создать форму для регистрации.
@@ -28,11 +33,9 @@ const repeatPassword = document.getElementById("repeatPassword");
 const registrationForm = document.querySelector('.registration-form');
 
 registrationForm.addEventListener('submit', (event) => {
-  event.preventDefault()
+  event.preventDefault();
   const form = event.target;
-  const formData = new FormData(form)
-  const formValue = Object.fromEntries(formData.entries())
-  
+  const formValue = getForm(form);
   if (formValue.password !== formValue.repeatPassword) {
     registrationForm.innerHTML = 'Регистрация не пройдена!';
     return;
@@ -60,7 +63,7 @@ const messageEl = document.getElementById('message');
 const loginForm = document.getElementById('loginForm');
 
 authBtn.addEventListener('click', () => {
-  modal.classList.add('modal-showed')
+  modal.classList.add('modal-showed');
 });
 
 closeBtn.addEventListener('click', () => {
