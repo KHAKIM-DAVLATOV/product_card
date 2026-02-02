@@ -45,7 +45,7 @@ const getCardCount = () => {
   }
 }
 
-// getCardCount();
+getCardCount();
 
 
 
