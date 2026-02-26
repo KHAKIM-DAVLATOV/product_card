@@ -3,7 +3,8 @@
 // import '/homework-6.js';
 // import '/homework-7.js';
 // import '/homework-8.js';
-import '/homework-9.js';
+// import '/homework-9.js';
+import '/homework-11/homework-11.js'
 
 // 3. Создать структуру на ваш выбор, как было показано в лекции (имеется ввиду - с машинами/бьюти-продуктами). Придумайте свою структуру и реализуйте наследуемость классов.
 
@@ -30,7 +31,4 @@ class Russia extends Country {
 }
 
 const usa = new Country('USA', 5000);
-usa.showCountryInfo();
-
 const russia = new Russia('Russia', 10000, 'русский')
-russia.showCountryInfo();
