@@ -1,3 +1,6 @@
+import { Form } from "./homework-10/Form.js";
+import { Modal } from "./homework-10/Modal.js";
+
 let user = undefined;
 
 // 1. Создаем файл, все как прошлых дз.
@@ -18,32 +21,30 @@ footerEmail.addEventListener('submit', (event) => {
   console.log(getForm(form));
 });
 
-function getForm(form) {
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
-  return data;
-}
-
 // Уровень 2.0:
 // 5. Создать форму для регистрации.
 // 6. Сохраняем этот объект в переменную для дальнейшего использования.
 
 const password = document.getElementById("password");
 const repeatPassword = document.getElementById("repeatPassword");
-const registrationForm = document.querySelector('.registration-form');
+const registrationForm = new Form('#form');
 
-registrationForm.addEventListener('submit', (event) => {
+registrationForm.form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const form = event.target;
-  const formValue = getForm(form);
+  
+  const formValue = registrationForm.getFormData();
+  if (!registrationForm.isValid()) {
+    console.log('Форма не валидна')
+    return;
+  }
   if (formValue.password !== formValue.repeatPassword) {
-    registrationForm.innerHTML = 'Регистрация не пройдена!';
+    registrationForm.form.innerHTML = 'Пароли не совпадают!';
     return;
   }
   user = formValue;
   user.createdOn = new Date();
+  registrationForm.reset();
   console.log(user);
-  form.reset();
 });
 
 // Уровень 3:
@@ -55,20 +56,14 @@ registrationForm.addEventListener('submit', (event) => {
 // 2) Модальное окно находиться ровно по центру страницы, независимо от масштаба
 
 const authBtn = document.getElementById('authBtn');
-const modal = document.getElementById('modal');
 const authLogin = document.getElementById('auth-login');
 const authPassword = document.getElementById('auth-password');
-const closeBtn = document.querySelector('.close-btn');
 const messageEl = document.getElementById('message');
 const loginForm = document.getElementById('loginForm');
 
-authBtn.addEventListener('click', () => {
-  modal.classList.add('modal-showed');
-});
+const modalId = new Modal('#modal');
 
-closeBtn.addEventListener('click', () => {
-  modal.classList.remove('modal-showed');
-});
+authBtn.addEventListener('click', () => modalId.openModal());
 
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -80,7 +75,7 @@ loginForm.addEventListener('submit', (event) => {
     currentUser.loginDate = new Date()
     messageEl.textContent = 'Успешный вход!';
     messageEl.style.color = 'green';
-    modal.classList.remove('modal-showed');
+    modalId.closeModal();
   } else {
     messageEl.style.color = 'red';
     messageEl.textContent = 'Неверный логин или пароль';
