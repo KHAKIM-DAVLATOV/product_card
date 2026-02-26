@@ -1,63 +1,36 @@
-// Покраска первой карточки
+// import '/homework-4.js';
+// import '/homework-5.js';
+// import '/homework-6.js';
+// import '/homework-7.js';
+// import '/homework-8.js';
+import '/homework-9.js';
 
-const firstProductCard = document.querySelector('.card-container');
-const changeColorCardButton = document.querySelector('#change-color-first-card');
-const greenColorHash = '#0f750bff';
+// 3. Создать структуру на ваш выбор, как было показано в лекции (имеется ввиду - с машинами/бьюти-продуктами). Придумайте свою структуру и реализуйте наследуемость классов.
 
-changeColorCardButton.addEventListener('click', () => {
-  firstProductCard.style.backgroundColor = greenColorHash;
-});
-
-// Покраска всех карточек
-
-const productCards = document.querySelectorAll('.card-container');
-const changeColorAllCardButton = document.querySelector('#change-color-all-cards');
-const blueColorHash = '#17249cff';
-
-changeColorAllCardButton.addEventListener('click', () => {
-  productCards.forEach((card) => {
-  card.style.backgroundColor = blueColorHash;
-  })
-});
-
-// Открыть Google
-
-const openGoogleButton = document.querySelector('#open-google');
-
-openGoogleButton.addEventListener('click', openGoogle);
-
-function openGoogle() {
-  const answer = confirm('Вы действительно хотите открыть Google?')
-  if (answer === true) {
-    window.open('https://www.google.com');
-  } else {
-    return;
+class Country {
+  constructor(name, population) {
+    this.name = name;
+    this.population = population;
+  }
+  
+  showCountryInfo() {
+    console.log(`Название страны: ${this.name}, количество населения - ${this.population}`);
   }
 }
 
-// Вывод консоль лог
+class Russia extends Country {
+  constructor(name, population, language) {
+    super(name,population);
+    this.language = language;
+  }
+  
+  showCountryInfo() {
+    console.log(`Название страны: ${this.name}, количество населения - ${this.population}, язык страны - ${this.language}`);
+  }
+}
 
-const outputAlertAndLogBtn = document.querySelector('#output-console-log');
+const usa = new Country('USA', 5000);
+usa.showCountryInfo();
 
-outputAlertAndLogBtn.addEventListener('click', () => outputAlertAndConsoleLog('ДЗ №4'));
-
-function outputAlertAndConsoleLog (message) {
-  alert(message);
-  console.log(message);
-};
-
-
-//вывод в консоль заголовка
-
-const outputTitle = document.querySelector(".main-title");
-
-outputTitle.addEventListener("mouseover", () => console.log(OutputTitle.textContent));
-
-
-// Переключение цветов кнопки
-
-const toggleColorButton = document.getElementById("btn-change-bg");
-
-toggleColorButton.addEventListener("click", function() {
-  this.classList.toggle('color-text-red');
-});
+const russia = new Russia('Russia', 10000, 'русский')
+russia.showCountryInfo();
